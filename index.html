@@ -14,6 +14,34 @@
       padding: 20px;
     }
 
+    .contact-header-box {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px 30px;
+      background: #ffffff;
+      border: 2px solid #0078D7;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 120, 215, 0.15);
+      text-align: center;
+    }
+
+    .contact-info h1 {
+      margin: 0;
+      font-size: 2em;
+      font-weight: 600;
+      color: #0078D7;
+    }
+
+    .contact-info p {
+      margin: 10px 0 0;
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    .icon-text {
+      margin: 0 5px;
+    }
+
     form {
       background: #ffffff;
       max-width: 900px;
@@ -176,9 +204,19 @@
 </head>
 <body>
 
+  <header class="contact-header-box">
+    <div class="contact-info">
+      <h1>Öncü Tarakçı</h1>
+      <p>
+        <span class="icon-text"><a href="tel:+905362185294" style="color: inherit; text-decoration: none;">536 218 5294</a></span> 
+        <span class="icon-text"><a href="mailto:oncutarakci@gmail.com" style="color: inherit; text-decoration: none;">oncutarakci@gmail.com</a></span>
+      </p>
+    </div>
+  </header>
+
   <div id="mainContent">
     <form id="serviceForm">
-      <p class="section-title">1.300 TL Standart Bakım/Onarım/Kurulum Hizmetim (Avrupa Yakası için 1.600 TL)</p>
+      <p class="section-title">1.300 TL Standart Bakım / Onarım / Kurulum Hizmetim (Avrupa Yakası için 1.600 TL)</p>
       <div class="list-single-column">
         <div>1. Bilgisayardaki her tür arıza tespiti yapılır. Olası donanımsal sorunlar için (Anakart, Ram, Harddisk, Klavye, Batarya vs. arızası durumunda) onarım maliyeti önden bildirilip onay alındıktan sonra yapılır</div>
         <div>2. Tüm veriler yedeklenir (Outlook mail hesapları, Google Chrome/ Mozilla Firefox Kayıtlı Adresleri, Tarayıcı üzerinde kayıtlı tüm şifreler, Wi-Fi şifreleri vs.)</div>
@@ -186,26 +224,25 @@
         <div>4. Isınma sorunu varsa (Sistem boştayken 45-50°C'yi aşıyorsa) termal macun yenilenir (+300 TL), grafik/oyun/video edit bilgisayarları için yüksek performans termal macun kullanılır (+600 TL)</div>
         <div>5. Laptop menteşe arızaları ve kasa kırıkları özel dolgu maddesiyle onarılır (+500 TL)</div>
         <div>6. Windows 11 Pro, 70 adımlık performans ayarı, Microsoft Office 2024 Full (Visio ve Project dahil), Adobe Acrobat Reader Pro, WinRAR Pro, Codec Pack (Tüm videoları oynatabilmesi için, VLC Player, Rocketdock, Sticky Notes, Google Chrome, Mozilla Firefox + YouTube ve Web reklam engelleyici, CCleaner Pro, Nero Express Pro, Zoom, Teams, Skype, WhatsApp, Spotify, Everything (hızlı dosya arama), GadgetPack, Lightshot Pro (Ekran görüntüsü alma), Vuescan Pro (Pdf tarama)</div>
-        <div>6. Format sonrası alınan tüm yedekler geri yüklenmeden güncel antivirüs programı ile taranır. Bulunan/Olası virüsler silinip temizlendikten sonra geri yüklenir.</div>
-        <div>7. AVG Antivirus Free (Ya da Avast Antivirus Free) kurulur ve performansı düşürmeyecek optimum ayarları yapılır.</div>
-        <div>8. Muhasebe bilgisayarları için BDP E-Beyanname, Mali mühür ve buna entegre E-Fatura ayarları ve kullanım kısayolları kurulur</div>
-        <div>9. Hukuk, Bilirkişi, Noter bilgisayarları için Uyap Kelime işlemci, E-İmza ile Uyap ve Bilirkişi giriş ayarları ve kısayolları kurulur</div>
-        <div>10. Poliklinik, Eczane vs. sağlık sektörü  bilgisayarları için E-imza ile HSYS, Gebliz giriş ayarları  yapılır ve kısayolları kurulur. Barkod etiket yazıcı ve barkod cihaz ayarları yapılır</div>
-        <div>11. Müzik sektörü bilgisayarları için en güncel ses kartı driver'ları ile VirtualDJ kurulumu yapılır</div>
-        <div>12. Format öncesi yüklü mail hesapları ve yazıcılar yeniden kurulur</div>
-        <div>13. Yerinde servis durumunda son olarak network yazıcı ayarları, paylaşılan klasörlerin bağlantıları da yapılarak işlem tamamlanır.</div>
-        <!-- Diğer maddeler buraya eklenebilir -->
+        <div>7. Format sonrası alınan tüm yedekler geri yüklenmeden güncel antivirüs programı ile taranır. Bulunan/Olası virüsler silinip temizlendikten sonra geri yüklenir.</div>
+        <div>8. AVG Antivirus Free (Ya da Avast Antivirus Free) kurulur ve performansı düşürmeyecek optimum ayarları yapılır</div>
+        <div>9. Muhasebe bilgisayarları için BDP E-Beyanname, Mali mühür ve buna entegre E-Fatura ayarları ve kullanım kısayolları kurulur</div>
+        <div>10. Hukuk, Bilirkişi, Noter bilgisayarları için Uyap Kelime işlemci, E-İmza ile Uyap ve Bilirkişi giriş ayarları ve kısayolları kurulur</div>
+        <div>11. Poliklinik, Eczane vs. sağlık sektörü bilgisayarları için E-imza ile HSYS, Gebliz giriş ayarları yapılır ve kısayolları kurulur. Barkod etiket yazıcı ve barkod cihaz ayarları yapılır</div>
+        <div>12. Müzik sektörü bilgisayarları için en güncel ses kartı driver'ları ile VirtualDJ kurulumu yapılır</div>
+        <div>13. Format öncesi yüklü mail hesapları ve yazıcılar yeniden kurulur</div>
+        <div>14. Yerinde servis durumunda son olarak network yazıcı ayarları, paylaşılan klasörlerin bağlantıları da yapılarak işlem tamamlanır</div>
       </div>
 
-      <p class="section-title">Lütfen aşağıdan yüklenmesini istediğiniz programları seçin (Her biri 100 TL)</p>
+      <p class="section-title">Lütfen aşağıdan yüklenmesini istediğiniz ek programları seçin (Her biri 100 TL)</p>
       <div class="two-columns">
-        <label><input type="checkbox" name="service" value="100" /> Adobe After Effects</label>
-        <label><input type="checkbox" name="service" value="100" /> Adobe Illustrator</label>
-        <label><input type="checkbox" name="service" value="100" /> Adobe Photoshop</label>
-        <label><input type="checkbox" name="service" value="100" /> Adobe Premiere Pro</label>
-        <label><input type="checkbox" name="service" value="100" /> Autodesk AutoCAD</label>
+        <label><input type="checkbox" name="service" value="100" /> Adobe Photoshop 2024 Full</label>
+        <label><input type="checkbox" name="service" value="100" /> Microsoft Project 2024 Full</label>
+        <label><input type="checkbox" name="service" value="200" /> Video Düzenleme Programları (Adobe Premiere Pro, After Effects, Davinci Resolve)</label>
+        <label><input type="checkbox" name="service" value="200" /> Autocad Full</label>
+        <label><input type="checkbox" name="service" value="100" /> 3D Modelleme Programları (Sketchup, 3Ds Max, Blender, Cinema 4D)</label>
+        <label><input type="checkbox" name="service" value="100" /> Adobe Illustrator Full</label>
         <label><input type="checkbox" name="service" value="100" /> Autodesk Revit</label>
-        <!-- Diğer programlar da buraya eklenebilir -->
       </div>
     </form>
 
@@ -215,7 +252,7 @@
       <button id="submitButton" class="button-link" type="button">Seçilen Programları Listele</button>
     </div>
 
-    <div class="note">Butona tıkladıktan sonra açılan ekran görüntüsünü Öncü' ye gönderin lütfen</div>
+    <div class="note">Butona tıkladıktan sonra açılan ekran görüntüsünü Öncü'ye gönderin lütfen</div>
   </div>
 
   <script>
@@ -231,7 +268,7 @@
     function calculateTotal() {
       const checkedBoxes = form.querySelectorAll('input[type="checkbox"]:checked');
       let total = 1300;
-      checkedBoxes.forEach((box) => {
+      checkedBoxes.forEach(box => {
         const val = Number(box.value);
         if (!isNaN(val)) total += val;
       });
@@ -245,7 +282,7 @@
       programListHtml += '<h2>Seçilen Programlar</h2>';
       programListHtml += '<h3>Standart Hizmet Paketi (1.300 TL)</h3>';
       programListHtml += '<ul>';
-      programListHtml += '<li>Windows 11 Pro, 70 adımlık performans ayarı, Microsoft Office 2024 Full (Visio ve Project dahil), Adobe Acrobat Reader Pro, WinRAR Pro, Codec Pack (Tüm videoları oynatabilmesi için, VLC Player, Rocketdock, Sticky Notes, Google Chrome, Mozilla Firefox + YouTube ve Web reklam engelleyici, CCleaner Pro, Nero Express Pro, Zoom, Teams, Skype, WhatsApp, Spotify, Everything (hızlı dosya arama), GadgetPack, Lightshot Pro (Ekran görüntüsü alma), Vuescan Pro (Pdf tarama)</li>';
+      programListHtml += '<li>Windows 11 Pro, 70 adımlık performans ayarı, Office 2024 Full, diğer temel yazılımlar</li>';
       programListHtml += '</ul>';
 
       if (checkedOptionalPrograms.length > 0) {
@@ -271,5 +308,6 @@
     submitButton.addEventListener('click', showSelectedProgramsInPage);
     form.addEventListener('input', calculateTotal);
   </script>
+
 </body>
 </html>
