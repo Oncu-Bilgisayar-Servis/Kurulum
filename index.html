@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yazılım Kurulum Hizmet Formu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #eef6ff, #ffffff);
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    form {
+      background: #ffffff;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2a2a2a;
+      font-size: 1.8em;
+      margin-bottom: 25px;
+    }
+
+    .section-title {
+      background-color: #0078D7;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: 1.2em;
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .list-single-column > div {
+      margin-bottom: 10px;
+      line-height: 1.6em;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .two-columns label {
+      background: #f1f7ff;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 12px 10px;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+    }
+
+    .two-columns label:hover {
+      border-color: #0078D7;
+      background: #e0f0ff;
+      transform: translateY(-2px);
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+      accent-color: #0078D7;
+    }
+
+    #totalBottom {
+      font-size: 1.8em;
+      font-weight: bold;
+      background: #d1f7e0;
+      color: #28a745;
+      border: 2px dashed #28a745;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 30px auto;
+      text-align: center;
+      max-width: 500px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .button-link {
+      background: linear-gradient(to right, #0078D7, #0056b3);
+      color: white;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .button-link:hover {
+      background: #004b99;
+      transform: scale(1.05);
+    }
+
+    .note {
+      text-align: center;
+      font-size: 0.95em;
+      color: #666;
+      margin-top: 20px;
+    }
+
+    .result-container {
+      max-width: 800px;
+      background: #fff;
+      padding: 30px;
+      margin: 40px auto;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    .result-container h2 {
+      text-align: center;
+      color: #2a2a2a;
+    }
+
+    .result-container h3 {
+      font-size: 1.3em;
+      color: #0056b3;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #a0cffc;
+      padding-bottom: 5px;
+    }
+
+    .result-container ul {
+      list-style-type: '✅ ';
+      margin-left: 20px;
+      padding-left: 0;
+    }
+
+    .result-container li {
+      margin-bottom: 8px;
+      color: #444;
+      line-height: 1.6em;
+    }
+
+    .result-container p {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.4em;
+      color: #28a745;
+      margin-top: 25px;
+      padding: 10px;
+      background-color: #e6ffe6;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .two-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="mainContent">
+    <form id="serviceForm">
+      <p class="section-title">1.300 TL Standart Bakım/Onarım/Kurulum Hizmetim (Avrupa Yakası için 1.600 TL)</p>
+      <div class="list-single-column">
+        <div>1. Bilgisayardaki her tür arıza tespiti yapılır. Olası donanımsal sorunlar için (Anakart, Ram, Harddisk, Klavye, Batarya vs. arızası durumunda) onarım maliyeti önden bildirilip onay alındıktan sonra yapılır</div>
+        <div>2. Tüm veriler yedeklenir (Outlook mail hesapları, Google Chrome/ Mozilla Firefox Kayıtlı Adresleri, Tarayıcı üzerinde kayıtlı tüm şifreler, Wi-Fi şifreleri vs.)</div>
+        <div>3. Bilgisayarın tüm fan ve soğutucu temizliği yapılır</div>
+        <div>4. Isınma sorunu varsa (Sistem boştayken 45-50°C'yi aşıyorsa) termal macun yenilenir (+300 TL), grafik/oyun/video edit bilgisayarları için yüksek performans termal macun kullanılır (+600 TL)</div>
+        <div>5. Laptop menteşe arızaları ve kasa kırıkları özel dolgu maddesiyle onarılır (+500 TL)</div>
+        <div>6. Windows 11 Pro, 70 adımlık performans ayarı, Microsoft Office 2024 Full (Visio ve Project dahil), Adobe Acrobat Reader Pro, WinRAR Pro, Codec Pack (Tüm videoları oynatabilmesi için, VLC Player, Rocketdock, Sticky Notes, Google Chrome, Mozilla Firefox + YouTube ve Web reklam engelleyici, CCleaner Pro, Nero Express Pro, Zoom, Teams, Skype, WhatsApp, Spotify, Everything (hızlı dosya arama), GadgetPack, Lightshot Pro (Ekran görüntüsü alma), Vuescan Pro (Pdf tarama)</div>
+        <div>6. Format sonrası alınan tüm yedekler geri yüklenmeden güncel antivirüs programı ile taranır. Bulunan/Olası virüsler silinip temizlendikten sonra geri yüklenir.</div>
+        <div>7. AVG Antivirus Free (Ya da Avast Antivirus Free) kurulur ve performansı düşürmeyecek optimum ayarları yapılır.</div>
+        <div>8. Muhasebe bilgisayarları için BDP E-Beyanname, Mali mühür ve buna entegre E-Fatura ayarları ve kullanım kısayolları kurulur</div>
+        <div>9. Hukuk, Bilirkişi, Noter bilgisayarları için Uyap Kelime işlemci, E-İmza ile Uyap ve Bilirkişi giriş ayarları ve kısayolları kurulur</div>
+        <div>10. Poliklinik, Eczane vs. sağlık sektörü  bilgisayarları için E-imza ile HSYS, Gebliz giriş ayarları  yapılır ve kısayolları kurulur. Barkod etiket yazıcı ve barkod cihaz ayarları yapılır</div>
+        <div>11. Müzik sektörü bilgisayarları için en güncel ses kartı driver'ları ile VirtualDJ kurulumu yapılır</div>
+        <div>12. Format öncesi yüklü mail hesapları ve yazıcılar yeniden kurulur</div>
+        <div>13. Yerinde servis durumunda son olarak network yazıcı ayarları, paylaşılan klasörlerin bağlantıları da yapılarak işlem tamamlanır.</div>
+        <!-- Diğer maddeler buraya eklenebilir -->
+      </div>
+
+      <p class="section-title">Lütfen aşağıdan yüklenmesini istediğiniz programları seçin (Her biri 100 TL)</p>
+      <div class="two-columns">
+        <label><input type="checkbox" name="service" value="100" /> Adobe After Effects</label>
+        <label><input type="checkbox" name="service" value="100" /> Adobe Illustrator</label>
+        <label><input type="checkbox" name="service" value="100" /> Adobe Photoshop</label>
+        <label><input type="checkbox" name="service" value="100" /> Adobe Premiere Pro</label>
+        <label><input type="checkbox" name="service" value="100" /> Autodesk AutoCAD</label>
+        <label><input type="checkbox" name="service" value="100" /> Autodesk Revit</label>
+        <!-- Diğer programlar da buraya eklenebilir -->
+      </div>
+    </form>
+
+    <div id="totalBottom">Toplam Tutar: 1.300 TL</div>
+
+    <div class="button-container">
+      <button id="submitButton" class="button-link" type="button">Seçilen Programları Listele</button>
+    </div>
+
+    <div class="note">Butona tıkladıktan sonra açılan ekran görüntüsünü Öncü' ye gönderin lütfen</div>
+  </div>
+
+  <script>
+    const form = document.getElementById('serviceForm');
+    const totalBottom = document.getElementById('totalBottom');
+    const submitButton = document.getElementById('submitButton');
+    const mainContent = document.getElementById('mainContent');
+
+    function formatNumber(num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    function calculateTotal() {
+      const checkedBoxes = form.querySelectorAll('input[type="checkbox"]:checked');
+      let total = 1300;
+      checkedBoxes.forEach((box) => {
+        const val = Number(box.value);
+        if (!isNaN(val)) total += val;
+      });
+      totalBottom.textContent = `Toplam Tutar: ${formatNumber(total)} TL`;
+      return total;
+    }
+
+    function showSelectedProgramsInPage() {
+      const checkedOptionalPrograms = form.querySelectorAll('.two-columns input[type="checkbox"]:checked');
+      let programListHtml = '<div class="result-container">';
+      programListHtml += '<h2>Seçilen Programlar</h2>';
+      programListHtml += '<h3>Standart Hizmet Paketi (1.300 TL)</h3>';
+      programListHtml += '<ul>';
+      programListHtml += '<li>Windows 11 Pro, 70 adımlık performans ayarı, Microsoft Office 2024 Full (Visio ve Project dahil), Adobe Acrobat Reader Pro, WinRAR Pro, Codec Pack (Tüm videoları oynatabilmesi için, VLC Player, Rocketdock, Sticky Notes, Google Chrome, Mozilla Firefox + YouTube ve Web reklam engelleyici, CCleaner Pro, Nero Express Pro, Zoom, Teams, Skype, WhatsApp, Spotify, Everything (hızlı dosya arama), GadgetPack, Lightshot Pro (Ekran görüntüsü alma), Vuescan Pro (Pdf tarama)</li>';
+      programListHtml += '</ul>';
+
+      if (checkedOptionalPrograms.length > 0) {
+        programListHtml += '<h3>Ek Seçilen Programlar</h3>';
+        programListHtml += '<ul>';
+        checkedOptionalPrograms.forEach(checkbox => {
+          programListHtml += `<li>${checkbox.parentElement.textContent.trim()}</li>`;
+        });
+        programListHtml += '</ul>';
+      } else {
+        programListHtml += '<p>Ek olarak seçilen bir program bulunmamaktadır.</p>';
+      }
+
+      const total = calculateTotal();
+      programListHtml += `<p>Toplam Tutar: ${formatNumber(total)} TL</p>`;
+      programListHtml += '<div class="button-container"><button class="button-link" onclick="location.reload()">Geri Dön</button></div>';
+      programListHtml += '</div>';
+
+      mainContent.innerHTML = programListHtml;
+    }
+
+    calculateTotal();
+    submitButton.addEventListener('click', showSelectedProgramsInPage);
+    form.addEventListener('input', calculateTotal);
+  </script>
+</body>
+</html>
