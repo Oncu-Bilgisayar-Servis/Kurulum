@@ -1,129 +1,298 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Öncü - Bilgisayar Servis Ücretleri</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom, #eef6ff, #ffffff);
-      color: #333;
-      margin: 0;
-      padding: 20px;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
+    <title>Öncü Tarakçı | Teknoloji Çözümleri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --accent: #ff3e00;
+            --dark: #0a0a0a;
+            --light: #ffffff;
+            --text-gray: rgba(255, 255, 255, 0.75);
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --whatsapp: #25d366;
+        }
 
-    .contact-header-box {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 20px 30px;
-      background: #ffffff;
-      border: 2px solid #0078D7;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0, 120, 215, 0.15);
-      text-align: center;
-    }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-    .contact-info h1 {
-      margin: 0;
-      font-size: 2em;
-      font-weight: 600;
-      color: #0078D7;
-    }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            margin: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    .contact-info p {
-      margin: 10px 0 0;
-      font-size: 1.1em;
-      color: #333;
-    }
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px 120px 20px;
+        }
 
-    .icon-text {
-      margin: 0 5px;
-    }
+        header {
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-    form {
-      background: #ffffff;
-      max-width: 900px;
-      margin: auto;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-      padding: 30px;
-    }
+        .hero-text h1 {
+            font-size: clamp(2.2rem, 8vw, 5rem);
+            margin: 0;
+            line-height: 0.9;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
 
-    .section-title {
-      background-color: #0078D7;
-      color: white;
-      padding: 15px 20px;
-      border-radius: 10px;
-      font-size: 1.2em;
-      text-align: center;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
+        .hero-text span { color: var(--accent); }
 
-    .list-single-column > div {
-      margin-bottom: 10px;
-      line-height: 1.6em;
-    }
-  </style>
+        .contact-info { text-align: left; }
+        .contact-info a {
+            color: var(--light);
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 15px;
+            margin-top: 10px;
+            font-size: 1rem;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 2px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: clamp(25px, 5vw, 60px);
+            border-radius: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .card-icon {
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            opacity: 0.9;
+        }
+
+        .card-title {
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
+            margin: 0 0 30px 0;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .standard-price-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 18px;
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            box-shadow: 0 12px 25px rgba(255, 62, 0, 0.3);
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .standard-price-tag small {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 8px;
+            padding-top: 8px;
+            opacity: 1;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .details-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .list-item {
+            display: flex;
+            gap: 15px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .list-item:last-child { border: none; }
+
+        .item-bullet {
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .item-text {
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            color: var(--text-gray);
+            text-align: left;
+        }
+
+        .highlight-price {
+            color: var(--light);
+            background: rgba(255, 255, 255, 0.12);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            padding: 40px 30px;
+            color: var(--light);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            background: linear-gradient(to bottom, transparent, rgba(255, 62, 0, 0.05));
+        }
+
+        /* METİN TABANLI WHATSAPP BUTONU */
+        .whatsapp-fixed-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid rgba(255,255,255,0.2);
+            -webkit-transform: translateZ(0); /* iPhone görünürlük tetikleyici */
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-fixed-btn:hover {
+            transform: scale(1.05);
+            background-color: #20ba5a;
+        }
+
+        @media (min-width: 851px) {
+            .standard-price-tag {
+                position: absolute;
+                top: 55px;
+                right: 50px;
+                margin-bottom: 0;
+            }
+            .card-title { max-width: 65%; }
+            .contact-info { text-align: right; }
+            .main-container { padding: 80px 30px 150px 30px; }
+        }
+
+        @media (max-width: 600px) {
+            .whatsapp-fixed-btn {
+                bottom: 20px;
+                right: 20px;
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header class="contact-header-box">
-    <div class="contact-info">
-      <h1>Öncü Tarakçı</h1>
-      <p>
-        <span class="icon-text"><a href="tel:+905362185294" style="color: inherit; text-decoration: none;">536 218 5294</a></span> 
-        <span class="icon-text"><a href="mailto:oncutarakci@gmail.com" style="color: inherit; text-decoration: none;">oncutarakci@gmail.com</a></span>
-      </p>
+    <!-- SİMGE YERİNE METİN TABANLI BUTON -->
+    <a href="https://wa.me/905362185294" class="whatsapp-fixed-btn" target="_blank">
+        <span style="font-size: 1.4rem;">●</span> WhatsApp
+    </a>
+
+    <div class="main-container">
+        <header>
+            <div class="hero-text">
+                <h1>ÖNCÜ<span>.</span></h1>
+                <h1 style="color: rgba(255,255,255,0.15)">TARAKÇI</h1>
+            </div>
+            <div class="contact-info">
+                <a href="tel:+905362185294">536 218 5294</a>
+                <a href="mailto:oncutarakci@gmail.com">oncutarakci@gmail.com</a>
+            </div>
+        </header>
+
+        <section class="card">
+            <div class="card-icon"><i data-lucide="cpu" size="32"></i></div>
+            <div class="standard-price-tag">
+                2.000 TL
+                <small>AVRUPA YAKASI 2.500 TL</small>
+            </div>
+            <h2 class="card-title">Standart Bakım / Onarım / Kurulum Hizmeti</h2>
+
+            <div class="details-list">
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Bilgisayardaki her tür arıza tespiti yapılır. Olası donanımsal sorunlar için (Anakart, Ram, Harddisk, Klavye, Batarya vb. arızası durumunda) onarım maliyeti önden bildirilip onay alındıktan sonra yapılır.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Tüm veriler yedeklenir (Outlook mail hesapları, Google Chrome/ Mozilla Firefox Kayıtlı Adresleri, Tarayıcı üzerinde kayıtlı tüm şifreler, Wi-Fi şifreleri vb.)</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Bilgisayarın tüm fan ve soğutucu temizliği yapılır.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Isınma sorunu varsa (Sistem boştayken 45-50°C'yi aşıyorsa) termal macun yenilenir <span class="highlight-price">+400 TL</span>, grafik/oyun/video edit bilgisayarları için yüksek performans termal macun kullanılır <span class="highlight-price">+600 TL</span>.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Laptop menteşe arızaları ve kasa kırıkları özel dolgu maddesiyle onarılır <span class="highlight-price">+800 TL</span>.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Windows 11 Pro, 70 adımlık performans ayarı, Microsoft Office 2024 Full (Visio ve Project dahil), Adobe Acrobat Reader Pro, WinRAR Pro, Codec Pack (Tüm videoları oynatabilmesi için), VLC Player, Rocketdock, Sticky Notes, Google Chrome, Mozilla Firefox + YouTube ve Web reklam engelleyici, CCleaner Pro, Nero Express Pro, Zoom, Teams, Skype, WhatsApp, Spotify, Everything (hızlı dosya arama), GadgetPack, Lightshot Pro (Ekran görüntüsü alma), Vuescan Pro (Pdf tarama) kurulumu yapılır. Bu standart programlar haricinde istenen tüm diğer programlar da kurulur.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Format sonrası alınan tüm yedekler geri yüklenmeden güncel antivirüs programı ile taranır. Bulunan/Olası virüsler silinip temizlendikten sonra geri yüklenir.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">AVG Antivirus Free (Ya da Avast Antivirus Free) kurulur ve performansı düşürmeyecek optimum ayarları yapılır.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Muhasebe bilgisayarları için BDP E-Beyanname, Mali mühür ve buna entegre E-Fatura ayarları ve kullanım kısayolları kurulur.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Hukuk, Bilirkişi, Noter bilgisayarları için Uyap Kelime işlemci, E-İmza ile Uyap ve Bilirkişi giriş ayarları ve kısayolları kurulur.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Poliklinik, Eczane vb. sağlık sektörü bilgisayarları için E-imza ile HSYS, Gebliz giriş ayarları yapılır ve kısayolları kurulur. Barkod etiket yazıcı ve barkod cihaz ayarları yapılır.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Müzik sektörü bilgisayarları için en güncel ses kartı driver'ları ile VirtualDJ kurulumu yapılır.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Format öncesi yüklü mail hesapları ve yazıcılar yeniden kurulur.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Yerinde servis durumunda son olarak network yazıcı ayarları, paylaşılan klasörlerin bağlantıları da yapılarak işlem tamamlanır.</div></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-icon"><i data-lucide="shield-check" size="32"></i></div>
+            <div class="standard-price-tag">
+                5.000 TL
+                <small>HARDDİSK BAŞINA</small>
+            </div>
+            <h2 class="card-title">Veri Kurtarma Hizmeti</h2>
+            <div class="details-list">
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Veri kurtarma işlemi harddiskin tipine, boyutuna göre değişiklik göstermekle beraber hemen hemen bir hafta sürmektedir.</div></div>
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">İlk tarama sonrası kurtarılabilecek dosyaların indeksi oluşur. Bu dosya listesi PDF formatında harddisk sahibine gönderilir. Onay verilmezse hiçbir ücret talep edilmeden harddisk iade edilir.</div></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-icon"><i data-lucide="globe" size="32"></i></div>
+            <div class="standard-price-tag">
+                500 TL
+                <small>BAĞLANTI BAŞINA</small>
+            </div>
+            <h2 class="card-title">Uzak Erişim Bağlantı Ücreti</h2>
+            <div class="details-list">
+                <div class="list-item"><div class="item-bullet">—</div><div class="item-text">Uzaktan bağlanarak destek verdiğim durumlarda alınan servis ücretidir.</div></div>
+            </div>
+        </section>
+
+        <footer>
+            Her Ocak ve Temmuz ayı başında servis ücretleri enflasyon oranında güncellenmektedir.
+        </footer>
     </div>
-  </header>
 
-  <form id="serviceForm">
-    <p class="section-title">2.000 TL Standart Bakım / Onarım / Kurulum Hizmetim (Avrupa Yakası için 2.500 TL)</p>
-    <div class="list-single-column">
-      <div>1. Bilgisayardaki her tür arıza tespiti yapılır. Olası donanımsal sorunlar için (Anakart, Ram, Harddisk, Klavye, Batarya vs. arızası durumunda) onarım maliyeti önden bildirilip onay alındıktan sonra yapılır</div>
-      <div>2. Tüm veriler yedeklenir (Outlook mail hesapları, Google Chrome/ Mozilla Firefox Kayıtlı Adresleri, Tarayıcı üzerinde kayıtlı tüm şifreler, Wi-Fi şifreleri vs.)</div>
-      <div>3. Bilgisayarın tüm fan ve soğutucu temizliği yapılır</div>
-      <div>4. Isınma sorunu varsa (Sistem boştayken 45-50°C'yi aşıyorsa) termal macun yenilenir (+400 TL), grafik/oyun/video edit bilgisayarları için yüksek performans termal macun kullanılır (+600 TL)</div>
-      <div>5. Laptop menteşe arızaları ve kasa kırıkları özel dolgu maddesiyle onarılır (+800 TL)</div>
-      <div>6. Windows 11 Pro, 70 adımlık performans ayarı, Microsoft Office 2024 Full (Visio ve Project dahil), Adobe Acrobat Reader Pro, WinRAR Pro, Codec Pack (Tüm videoları oynatabilmesi için, VLC Player, Rocketdock, Sticky Notes, Google Chrome, Mozilla Firefox + YouTube ve Web reklam engelleyici, CCleaner Pro, Nero Express Pro, Zoom, Teams, Skype, WhatsApp, Spotify, Everything (hızlı dosya arama), GadgetPack, Lightshot Pro (Ekran görüntüsü alma), Vuescan Pro (Pdf tarama) kurulumu yapılır. Bu standart programlar haricinde istenen tüm diğer programlar da kurulur.</div>
-      <div>7. Format sonrası alınan tüm yedekler geri yüklenmeden güncel antivirüs programı ile taranır. Bulunan/Olası virüsler silinip temizlendikten sonra geri yüklenir.</div>
-      <div>8. AVG Antivirus Free (Ya da Avast Antivirus Free) kurulur ve performansı düşürmeyecek optimum ayarları yapılır</div>
-      <div>9. Muhasebe bilgisayarları için BDP E-Beyanname, Mali mühür ve buna entegre E-Fatura ayarları ve kullanım kısayolları kurulur</div>
-      <div>10. Hukuk, Bilirkişi, Noter bilgisayarları için Uyap Kelime işlemci, E-İmza ile Uyap ve Bilirkişi giriş ayarları ve kısayolları kurulur</div>
-      <div>11. Poliklinik, Eczane vs. sağlık sektörü bilgisayarları için E-imza ile HSYS, Gebliz giriş ayarları yapılır ve kısayolları kurulur. Barkod etiket yazıcı ve barkod cihaz ayarları yapılır</div>
-      <div>12. Müzik sektörü bilgisayarları için en güncel ses kartı driver'ları ile VirtualDJ kurulumu yapılır</div>
-      <div>13. Format öncesi yüklü mail hesapları ve yazıcılar yeniden kurulur</div>
-      <div>14. Yerinde servis durumunda son olarak network yazıcı ayarları, paylaşılan klasörlerin bağlantıları da yapılarak işlem tamamlanır</div>
-    </div>
-
-
-
-    <!-- Veri Kurtarma Başlığı -->
-    <p class="section-title">Veri Kurtarma Hizmeti 5.000 TL</p>
-    <div class="list-single-column">
-    <div>1. Veri kurtarma işlemi harddiskin tipine, boyutune göre değişilik göstermekle beraber hemen hemen bir hafta sürmektedir.</div>
-        <div>2. İlk tarama sonrası kurtarılabilecek dosyaların indeksi oluşur. Bu dosya listesi PDF formatında harddisk sahibine gönderilir. İşe yarar dosyaların listede olup olmamasına göre veri kurtarma işlemi için onay istenir.</div>
-        
-        <div>3. Eğer işe yarayan dosyalar listede yoksa veri kurtarma işlemi iptal edilir. Hiçbir ücret talep edilmeden harddisk iade edilir.</div>
-
-<div>4. Eğer listede istenen veriler var ise veri kurtarma işlemine başlanr.</div>
-
-            <!-- Uzak Erişim Başlığı -->
-    <p class="section-title">Uzak Erişim Bağlantı Ücretim 500 TL</p>
-    <div class="list-single-column">
-      <div>Uzaktan bağlanarak destek verdiğim durumlarda, bağlantı başına rica ettiğim servis ücretim..</div>
-    </div>
-
-  </form>
-
-  <p style="color: red; text-align: center; margin-top: 40px; font-weight: bold;">
-    Her Ocak ve Temmuz ayı başında servis ücretleri enflasyon oranında güncellenmektedir
-  </p>
-
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
-
-
